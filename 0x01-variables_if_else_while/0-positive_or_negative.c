@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
- * main - Program that will assign a random number
+ * main - A program that will assign random numbers
+ *
  * Return: 0 (success)
+ *
  */
+
 int main(void)
 {
 	int n;
@@ -21,7 +25,8 @@ int main(void)
 		printf("%d is zero\n", n);
 	}
 	else if (n < 0)
+	{
 		printf("%d is negative\n", n);
+	}
 	return (0);
 }
-
