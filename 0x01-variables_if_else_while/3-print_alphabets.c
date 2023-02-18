@@ -1,9 +1,10 @@
 #include <stdio.h>
 /**
- * main - A program that prints lowercase and the uppercase
+ * main - A program that prints alphabet in lowercase then upper case
  *
  * Return: 0 (success)
  */
+
 int main(void)
 {
 	char c;
@@ -13,20 +14,14 @@ int main(void)
 	c = 'a';
 	d = 'A';
 	while
-		(c <= 'z')
-		{
+		(c <= 'z') {
 			putchar(c);
 			c++;
 		}
 	while
-		(d <= 'Z')
-		{
-			putchar(d);
+		(d <= 'z') {
+			putchar(c);
 			d++;
 		}
-	putchar('\n');
 	return (0);
 }
-
-
-
