@@ -1,10 +1,10 @@
 #include "main.h"
-/**
- * print_alphabet_x10 - A program that prints 10x the lowercase alphabet
- *
- */
 
-void print_print_alphabet_x10(void)
+/**
+ * print_alphabet_x10 - function that prints 10x the lowercase alphabet
+ * Return: void
+ */
+void print_alphabet_10x(void)
 {
 	char c;
 	int i = 0;
@@ -14,8 +14,8 @@ void print_print_alphabet_x10(void)
 		for (c = 'a'; c <= 'z'; c++)
 		{
 			_putchar(c);
-			_putchar('\n');
-			i++;
 		}
+		_putchar('\n');
+		i++;
 	}
 }
