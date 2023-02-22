@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * time_tables - prints the 9x table, starting with 0
+ * times_table - prints the 9x table, starting with 0
  * Return: empty output
  */
 
-void time_tables(void)
+void times_table(void)
 {
 	int x, y, z, u, d;
 
