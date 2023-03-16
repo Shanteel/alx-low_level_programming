@@ -26,17 +26,26 @@ char *_memset(char *s, char b, unsigned int n)
  *
  * Return: pointer to allocated memory
  */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
+	int i = 0, l = 0;
+	char *m;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptr = malloc(size * nmemb);
 
-	if (ptr == NULL)
+	l = nmemb * size;
+	m = malloc(l);
+
+	if (m == NULL)
 		return (NULL);
-	_memset(ptr, 0, nmemb * size);
 
-	return (ptr);
+	while (i < l)
+	{
+		m[i] = 0;
+		i++;
+	}
+
+	return (m);
 }
