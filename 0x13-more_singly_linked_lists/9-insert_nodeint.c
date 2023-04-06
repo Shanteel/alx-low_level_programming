@@ -3,7 +3,7 @@
 /**
  * insert_nodeint_at_index - inserts a new node at a given position
  * @head: points to the first node
- * idx: index where the list will be added
+ * @idx: index where the list will be added
  * @n: integer
  * Return: address of the new node, NULL if it fails
  */
