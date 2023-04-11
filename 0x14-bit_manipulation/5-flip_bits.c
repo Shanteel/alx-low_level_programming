@@ -9,17 +9,16 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int i, num_of_bits = 0;
-	unsigned long int mask;
+	int num_of_bits = 0;
 	unsigned long int xor = n ^ m;
 
-	i = 63;
-	while (i >= 0)
+	while (xor > 0)
 	{
-		i++;
+		if (xor & 1)
+		{
+			num_of_bits++;
+		}
+		xor >>= 1;
 	}
-	mask = xor >> i;
-	if (mask & 1)
-		num_of_bits++;
 	return (num_of_bits);
 }
