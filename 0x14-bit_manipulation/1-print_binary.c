@@ -7,16 +7,13 @@
  */
 void print_binary(unsigned long int n)
 {
-	int printed_bits = 0;
+	int i, printed_bits = 0;
 	unsigned long int mask;
-	int i = 63;
 
-	while (i >= 0)
-	{
-		i--;
+	for (i = 63; i >= 0; i--)
 		{
-			mask = n >> 1;
-			if (mask & 1)
+			mask = i >> 0;
+			if (mask & n)
 			{
 				putchar ('1');
 				printed_bits++;
@@ -26,5 +23,4 @@ void print_binary(unsigned long int n)
 		}
 		if (printed_bits != 0)
 			putchar('0');
-	}
 }
