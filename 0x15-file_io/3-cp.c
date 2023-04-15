@@ -4,13 +4,14 @@
 
 /**
  * create_buffer - allocates 1024 bytes to a buffer
- * @filename: buffers stores a sring of characters
+ * @filename: string of characters are stored by a buffer
  * Return: pointer to a buffer
  */
 
-char *create_buffer(char *file)
+char *create_buffer(char *filename)
 {
 	char *buf;
+
 
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
@@ -31,14 +32,14 @@ char *create_buffer(char *file)
 int main(int argc, char *argv[])
 {
 	int from, to, r, w;
-	char *buf[buffer_size];
+	char *buf;
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
 		exit(97);
 	}
-	from = fopen(argv[1], O_RDONLY);
+	from = open(argv[1], O_RDONLY);
 	if (from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
@@ -49,15 +50,15 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	to = fopen(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((r = fread(from, buf, 1024)) > 0)
+	while ((r = read(from, buf, 1024)) > 0)
 	{
-		w = fwrite(to, buf, r);
+		w = write(to, buf, r);
 		if (w != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file%s\n", argv[2]);

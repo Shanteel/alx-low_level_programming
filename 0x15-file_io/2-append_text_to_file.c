@@ -17,7 +17,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
-		w = fwrite(file_des, text_content, str_len);
+		w = write(file_des, text_content, str_len);
 
 		if (w == -1)
 		{
@@ -25,7 +25,7 @@ int append_text_to_file(const char *filename, char *text_content)
 			return (-1);
 		}
 	}
-	file_des = fopen(filename, O_WRONLY | O_APPEND);
+	file_des = open(filename, O_WRONLY | O_APPEND);
 	if (file_des == -1)
 	{
 		return (-1);
